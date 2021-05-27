@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&display=swap");
+
+// primary
+$red: hsl(0, 100%, 68%);
+
+// neutral
+$veryDarkBlue: hsl(230, 29%, 20%);
+$darkGrayishBlue: hsl(230, 11%, 40%);
+$grayishBlue: hsl(231, 7%, 65%);
+$lightGrayishBlue: hsl(207, 33%, 95%);
+
+// font
+$barlow: "Barlow", sans-serif;
+$barlowCondensed: "Barlow Condensed", sans-serif;
+$fontSize: 18px;
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-size: $fontSize;
+}
+
+.container {
+	padding: 2.5em 2em;
+	overflow-x: hidden;
+}
+
+.background-shape {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 50vw;
+	height: 55vh;
+	border-bottom-left-radius: 25%;
+	background-color: $lightGrayishBlue;
+	z-index: -1;
+}
+
+nav {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	// width: 100%;
+}
+
+.landing-page-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.illu-devices {
+	min-width: 31.5rem;
+	width: 100%;
+	height: auto;
+	margin-top: 3rem;
+	margin-bottom: 5rem;
+	transform: translate(-5%, 0%);
+}
+
+.content-container {
+	h1 {
+		margin-bottom: 0.5em;
+	}
+
+	.para-desc {
+		color: $darkGrayishBlue;
+		line-height: 1.5;
+		margin-bottom: 1em;
+		padding-right: 1.5em;
+	}
+}
+
+.short-description-container {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1em;
+
+	div {
+		padding: 0.25em 0.75em;
+		border: 0;
+		border-radius: 20px;
+		background-color: $veryDarkBlue;
+		color: white;
+		margin-right: 0.75em;
+	}
+
+	p {
+		letter-spacing: 0.25em;
+		font-family: $barlowCondensed;
+		font-size: 16px;
+		color: $grayishBlue;
+	}
+}
+
+h1,
+h4 {
+	font-family: $barlowCondensed;
+	font-weight: 700;
+}
+
+p {
+	font-family: $barlow;
+	color: $grayishBlue;
+}
+
+a {
+	text-decoration: none;
+}
+
+.demo-button,
+.preview-button {
+	border: 0;
+}
+
+.demo-button {
+	border-radius: 5px;
+	background-color: $red;
+	font-family: $barlowCondensed;
+	font-weight: 700;
+	padding: 0.75rem 1rem;
+	margin-right: 1em;
+	font-size: 1rem;
+	a {
+		color: white;
+	}
+}
+
+.preview-button {
+	a {
+		font-family: $barlowCondensed;
+		background-color: white;
+		color: $grayishBlue;
+		font-size: 1rem;
+		letter-spacing: 0.125rem;
+	}
+}
+
+@media (min-width: 540px) {
+	.illu-devices {
+		transform: translate(0%, 0%);
+	}
+}
