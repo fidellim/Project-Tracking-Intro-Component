@@ -22,6 +22,7 @@ $fontSize: 18px;
 
 body {
 	font-size: $fontSize;
+	font-family: $barlowCondensed;
 }
 
 .container {
@@ -35,7 +36,7 @@ body {
 	right: 0;
 	width: 50vw;
 	height: 55vh;
-	border-bottom-left-radius: 25%;
+	border-bottom-left-radius: 5em;
 	background-color: $lightGrayishBlue;
 	z-index: -1;
 }
@@ -45,7 +46,69 @@ nav {
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	// width: 100%;
+	width: 100%;
+	position: relative;
+
+	.logo {
+		cursor: pointer;
+	}
+}
+
+.nav-button {
+	cursor: pointer;
+	display: block;
+}
+
+// relative to nav
+.mobile-nav {
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0%;
+	width: 100%;
+	border: 1px solid $lightGrayishBlue;
+	font-weight: 700;
+	text-transform: uppercase;
+	text-align: center;
+	transform: translate(0%, 30%);
+	background-color: white;
+	filter: drop-shadow(0px 0px 10px rgb(209, 208, 208));
+	z-index: 1;
+	visibility: hidden;
+
+	ul {
+		list-style: none;
+		color: $veryDarkBlue;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		li {
+			padding: 0 0;
+			margin: 1.25em 0;
+			cursor: pointer;
+		}
+		li:hover {
+			border-bottom: 1px solid $darkGrayishBlue;
+		}
+	}
+
+	.fa-circle {
+		display: none;
+	}
+
+	div {
+		border-top: 1px solid rgb(194, 194, 194);
+		padding: 1.5em 0;
+		margin: 0 1.5em;
+		a {
+			color: $grayishBlue;
+		}
+		a:hover {
+			border-bottom: 1px solid $grayishBlue;
+		}
+	}
 }
 
 .landing-page-container {
@@ -131,6 +194,10 @@ a {
 	}
 }
 
+.demo-button:hover {
+	opacity: 0.8;
+}
+
 .preview-button {
 	a {
 		font-family: $barlowCondensed;
@@ -144,5 +211,100 @@ a {
 @media (min-width: 540px) {
 	.illu-devices {
 		transform: translate(0%, 0%);
+	}
+}
+
+@media (min-width: 900px) {
+	.container {
+		padding: 3em 0 3em 10em;
+		overflow-x: hidden;
+	}
+	nav {
+		padding-right: 10em;
+	}
+	.landing-page-container {
+		flex-direction: row-reverse;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		margin-top: 4rem;
+
+		.illu-devices {
+			margin-top: 0;
+			margin-bottom: 0;
+			width: 150%;
+			height: auto;
+			transform: translate(22.5%, 5%);
+		}
+	}
+	.content-container {
+		// flex-basis: 100%;
+		width: 50rem;
+		h1 {
+			max-width: 25rem;
+		}
+
+		.para-desc {
+			max-width: 19rem;
+		}
+	}
+	h1 {
+		font-size: 3rem;
+	}
+
+	.nav-button {
+		cursor: pointer;
+		display: none;
+	}
+
+	.mobile-nav {
+		display: flex;
+		align-items: center;
+		position: static;
+		width: auto;
+		border: 0;
+		font-weight: 700;
+		text-transform: uppercase;
+		text-align: center;
+		transform: translate(0%, 0%);
+		background-color: transparent;
+		filter: drop-shadow(0px 0px 0px);
+		visibility: visible !important;
+		z-index: 1;
+
+		ul {
+			list-style: none;
+			color: $veryDarkBlue;
+			display: flex;
+			flex-direction: row;
+
+			li {
+				padding: 0 0;
+				margin: 0 1.5em;
+				cursor: pointer;
+			}
+			li:hover {
+				border-bottom: 1px solid $darkGrayishBlue;
+			}
+		}
+
+		.fa-circle {
+			font-size: 0.3em;
+			padding: 0 5em;
+			display: block;
+			color: $grayishBlue;
+		}
+
+		div {
+			border-top: 0;
+			padding: 0 0;
+			margin: 0 0 0 1em;
+			a {
+				color: $grayishBlue;
+			}
+			a:hover {
+				border-bottom: 1px solid $grayishBlue;
+			}
+		}
 	}
 }

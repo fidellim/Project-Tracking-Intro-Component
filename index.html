@@ -6,6 +6,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/9e1ea52b25.js" crossorigin="anonymous"></script>
   <title>Frontend Mentor | Project tracking intro component</title>
 
 </head>
@@ -14,8 +15,19 @@
     <div class="container">
       <div class="background-shape"></div>
       <nav>
-        <img src="./images/logo.svg" alt="brand logo">
-        <img src="./images/icon-hamburger.svg" alt="hamburger menu icon">
+        <img src="./images/logo.svg" class="logo" alt="brand logo">
+        <img src="./images/icon-hamburger.svg" class="nav-button" alt="hamburger menu icon">
+        <div class="mobile-nav">
+          <ul>
+            <li>product</li>
+            <li>features</li>
+            <li>pricing</li>
+          </ul>
+          <i class="fas fa-circle"></i>
+          <div>
+            <a href="#">login</a>
+          </div>
+        </div>
       </nav>
 
       <div class="landing-page-container">
@@ -45,5 +57,7 @@
       </div>
     </div>
   </header>
+
+  <script src="/index.js"></script>
 </body>
 </html>
